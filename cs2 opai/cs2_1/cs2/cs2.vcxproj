@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{414ca656-55cd-4365-bcbd-889e50b19439}</ProjectGuid>
+    <RootNamespace>cs2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>build\</OutDir>
+    <IntDir>build\</IntDir>
+    <TargetName>build</TargetName>
+    <IncludePath>$(SolutionDir)cs2\dependencies\protobufs\include;$(SolutionDir)cs2\dependencies\imgui\freetype\include;$(SolutionDir)cs2\dependencies\imgui\freetype;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)cs2\dependencies\protobufs\lib;$(SolutionDir)cs2\dependencies\imgui\freetype;$(SolutionDir)cs2\dependencies\imgui\freetype\include;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>build\debug\</OutDir>
+    <IntDir>build\debug\</IntDir>
+    <TargetName>build</TargetName>
+    <IncludePath>$(SolutionDir)cs2\dependencies\protobufs\include;$(SolutionDir)cs2\dependencies\imgui\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)cs2\dependencies\protobufs\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>freetype.lib;libprotobufd.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;WINDOWS_IGNORE_PACKING_MISMATCH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\features\menu\menu.cpp" />
+    <ClCompile Include="src\features\skins\skins.cpp" />
+    <ClCompile Include="src\sdk\classes\interfaces\CEngineTrace.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_demo.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_draw.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_freetype.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_stdlib.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_tables.cpp" />
+    <ClCompile Include="dependencies\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="dependencies\minhook\buffer.c" />
+    <ClCompile Include="dependencies\minhook\hde\hde32.c" />
+    <ClCompile Include="dependencies\minhook\hde\hde64.c" />
+    <ClCompile Include="dependencies\minhook\hook.c" />
+    <ClCompile Include="dependencies\minhook\trampoline.c" />
+    <ClCompile Include="src\features\aimbot\aimbot.cpp" />
+    <ClCompile Include="src\features\antiaim\antiaim.cpp" />
+    <ClCompile Include="src\features\config\config.cpp" />
+    <ClCompile Include="src\features\events\events.cpp" />
+    <ClCompile Include="src\features\lagcompensation\lagcomp.cpp" />
+    <ClCompile Include="src\features\misc\movement.cpp" />
+    <ClCompile Include="src\features\misc\pvsupdate.cpp" />
+    <ClCompile Include="src\features\subticks\subtick.cpp" />
+    <ClCompile Include="src\features\visuals\chams.cpp" />
+    <ClCompile Include="src\features\visuals\players.cpp" />
+    <ClCompile Include="src\features\visuals\scopeoverlay.cpp" />
+    <ClCompile Include="src\features\visuals\weapons.cpp" />
+    <ClCompile Include="src\features\visuals\worldmodulation.cpp" />
+    <ClCompile Include="src\hash\hash.cpp" />
+    <ClCompile Include="src\hooks\CreateMove.cpp" />
+    <ClCompile Include="src\hooks\directx\directx.cpp" />
+    <ClCompile Include="src\hooks\DirectXPresent.cpp" />
+    <ClCompile Include="src\hooks\DrawAggregateSceneObject.cpp" />
+    <ClCompile Include="src\hooks\DrawAnimatableSceneObject.cpp" />
+    <ClCompile Include="src\hooks\DrawCrosshair.cpp" />
+    <ClCompile Include="src\hooks\DrawFlashbang.cpp" />
+    <ClCompile Include="src\hooks\DrawGlow.cpp" />
+    <ClCompile Include="src\hooks\DrawLightSceneObject.cpp" />
+    <ClCompile Include="src\hooks\DrawOverHeadInfo.cpp" />
+    <ClCompile Include="src\hooks\DrawRadarEntities.cpp" />
+    <ClCompile Include="src\hooks\DrawScopeOverlay.cpp" />
+    <ClCompile Include="src\hooks\DrawSmokeVolume.cpp" />
+    <ClCompile Include="src\hooks\DrawTeamIntro.cpp" />
+    <ClCompile Include="src\hooks\DrawTorso.cpp" />
+    <ClCompile Include="src\hooks\FrameStageNotify.cpp" />
+    <ClCompile Include="src\hooks\GetFieldOfView.cpp" />
+    <ClCompile Include="src\hooks\LevelInit.cpp" />
+    <ClCompile Include="src\hooks\LevelShutdown.cpp" />
+    <ClCompile Include="src\hooks\OnAddEntity.cpp" />
+    <ClCompile Include="src\hooks\OnRemoveEntity.cpp" />
+    <ClCompile Include="src\hooks\OverrideView.cpp" />
+    <ClCompile Include="src\hooks\UpdateAggregateSceneObject.cpp" />
+    <ClCompile Include="src\hooks\UpdateInPVS.cpp" />
+    <ClCompile Include="src\hooks\EnableCursor.cpp" />
+    <ClCompile Include="src\hooks\MouseInput.cpp" />
+    <ClCompile Include="src\hooks\UpdatePostProcessing.cpp" />
+    <ClCompile Include="src\hooks\UpdateSkybox.cpp" />
+    <ClCompile Include="src\hooks\ValidateInput.cpp" />
+    <ClCompile Include="src\hooks\ViewPunch.cpp" />
+    <ClCompile Include="src\render\render.cpp" />
+    <ClCompile Include="src\sdk\classes\CCSGOInput.cpp" />
+    <ClCompile Include="src\sdk\classes\CGameEvents.cpp" />
+    <ClCompile Include="src\sdk\classes\CMaterial2.cpp" />
+    <ClCompile Include="src\sdk\classes\CParticleSystem.cpp" />
+    <ClCompile Include="src\sdk\classes\cs_usercmd.pb.cpp" />
+    <ClCompile Include="src\sdk\classes\entity\C_BasePlayerWeapon.cpp" />
+    <ClCompile Include="src\sdk\classes\interfaces\CGameEntitySystem.cpp" />
+    <ClCompile Include="src\sdk\classes\interfaces\CMaterialSystem.cpp" />
+    <ClCompile Include="src\sdk\classes\interfaces\CResourceSystem.cpp" />
+    <ClCompile Include="src\sdk\classes\interfaces\Cvar.cpp" />
+    <ClCompile Include="src\sdk\classes\entity\CEntityInstance.cpp" />
+    <ClCompile Include="src\sdk\classes\entity\CHandle.cpp" />
+    <ClCompile Include="src\sdk\classes\entity\C_BaseEntity.cpp" />
+    <ClCompile Include="src\sdk\classes\entity\C_CSPlayerPawn.cpp" />
+    <ClCompile Include="src\sdk\classes\interfaces\CSchemaSystem.cpp" />
+    <ClCompile Include="src\sdk\classes\entity\C_CSWeaponBase.cpp" />
+    <ClCompile Include="src\sdk\classes\interfaces\IEngineClient.cpp" />
+    <ClCompile Include="src\sdk\classes\KeyValues3.cpp" />
+    <ClCompile Include="src\sdk\classes\networkbasetypes.pb.cpp" />
+    <ClCompile Include="src\sdk\classes\network_connection.pb.cpp" />
+    <ClCompile Include="src\sdk\classes\usercmd.pb.cpp" />
+    <ClCompile Include="src\sdk\entity\entity.cpp" />
+    <ClCompile Include="src\hooks\hooks.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\sdk\interfaces\interfaces.cpp" />
+    <ClCompile Include="src\sdk\math\math.cpp" />
+    <ClCompile Include="src\sdk\math\Vector.cpp" />
+    <ClCompile Include="src\sdk\schema\schema.cpp" />
+    <ClCompile Include="src\utils\utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\features\skins\skins.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_BodyComponent.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\CEngineTrace.h" />
+    <ClInclude Include="dependencies\imgui\imconfig.h" />
+    <ClInclude Include="dependencies\imgui\imgui.h" />
+    <ClInclude Include="dependencies\imgui\imgui_freetype.h" />
+    <ClInclude Include="dependencies\imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="dependencies\imgui\imgui_impl_win32.h" />
+    <ClInclude Include="dependencies\imgui\imgui_internal.h" />
+    <ClInclude Include="dependencies\imgui\imgui_stdlib.h" />
+    <ClInclude Include="dependencies\imgui\imstb_rectpack.h" />
+    <ClInclude Include="dependencies\imgui\imstb_textedit.h" />
+    <ClInclude Include="dependencies\imgui\imstb_truetype.h" />
+    <ClInclude Include="dependencies\json\adl_serializer.h" />
+    <ClInclude Include="dependencies\json\byte_container_with_subtype.h" />
+    <ClInclude Include="dependencies\json\detail\abi_macros.h" />
+    <ClInclude Include="dependencies\json\detail\conversions\from_json.h" />
+    <ClInclude Include="dependencies\json\detail\conversions\to_chars.h" />
+    <ClInclude Include="dependencies\json\detail\conversions\to_json.h" />
+    <ClInclude Include="dependencies\json\detail\exceptions.h" />
+    <ClInclude Include="dependencies\json\detail\hash.h" />
+    <ClInclude Include="dependencies\json\detail\input\binary_reader.h" />
+    <ClInclude Include="dependencies\json\detail\input\input_adapters.h" />
+    <ClInclude Include="dependencies\json\detail\input\json_sax.h" />
+    <ClInclude Include="dependencies\json\detail\input\lexer.h" />
+    <ClInclude Include="dependencies\json\detail\input\parser.h" />
+    <ClInclude Include="dependencies\json\detail\input\position_t.h" />
+    <ClInclude Include="dependencies\json\detail\iterators\internal_iterator.h" />
+    <ClInclude Include="dependencies\json\detail\iterators\iteration_proxy.h" />
+    <ClInclude Include="dependencies\json\detail\iterators\iterator_traits.h" />
+    <ClInclude Include="dependencies\json\detail\iterators\iter_impl.h" />
+    <ClInclude Include="dependencies\json\detail\iterators\json_reverse_iterator.h" />
+    <ClInclude Include="dependencies\json\detail\iterators\primitive_iterator.h" />
+    <ClInclude Include="dependencies\json\detail\json_custom_base_class.h" />
+    <ClInclude Include="dependencies\json\detail\json_pointer.h" />
+    <ClInclude Include="dependencies\json\detail\json_ref.h" />
+    <ClInclude Include="dependencies\json\detail\macro_scope.h" />
+    <ClInclude Include="dependencies\json\detail\macro_unscope.h" />
+    <ClInclude Include="dependencies\json\detail\meta\call_std\begin.h" />
+    <ClInclude Include="dependencies\json\detail\meta\call_std\end.h" />
+    <ClInclude Include="dependencies\json\detail\meta\cpp_future.h" />
+    <ClInclude Include="dependencies\json\detail\meta\detected.h" />
+    <ClInclude Include="dependencies\json\detail\meta\identity_tag.h" />
+    <ClInclude Include="dependencies\json\detail\meta\is_sax.h" />
+    <ClInclude Include="dependencies\json\detail\meta\std_fs.h" />
+    <ClInclude Include="dependencies\json\detail\meta\type_traits.h" />
+    <ClInclude Include="dependencies\json\detail\meta\void_t.h" />
+    <ClInclude Include="dependencies\json\detail\output\binary_writer.h" />
+    <ClInclude Include="dependencies\json\detail\output\output_adapters.h" />
+    <ClInclude Include="dependencies\json\detail\output\serializer.h" />
+    <ClInclude Include="dependencies\json\detail\string_concat.h" />
+    <ClInclude Include="dependencies\json\detail\string_escape.h" />
+    <ClInclude Include="dependencies\json\detail\value_t.h" />
+    <ClInclude Include="dependencies\json\json.h" />
+    <ClInclude Include="dependencies\json\json_fwd.h" />
+    <ClInclude Include="dependencies\json\ordered_map.h" />
+    <ClInclude Include="dependencies\json\thirdparty\hedley\hedley.h" />
+    <ClInclude Include="dependencies\json\thirdparty\hedley\hedley_undef.h" />
+    <ClInclude Include="dependencies\minhook\buffer.h" />
+    <ClInclude Include="dependencies\minhook\hde\hde32.h" />
+    <ClInclude Include="dependencies\minhook\hde\hde64.h" />
+    <ClInclude Include="dependencies\minhook\hde\pstdint.h" />
+    <ClInclude Include="dependencies\minhook\hde\table32.h" />
+    <ClInclude Include="dependencies\minhook\hde\table64.h" />
+    <ClInclude Include="dependencies\minhook\minhook.h" />
+    <ClInclude Include="dependencies\minhook\trampoline.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\any.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\any.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\api.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\arena.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\arenastring.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\arenaz_sampler.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\arena_impl.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\code_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\command_line_interface.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\cpp\cpp_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\cpp\file.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\cpp\generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\cpp\helpers.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\cpp\names.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\csharp\csharp_doc_comment.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\csharp\csharp_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\csharp\csharp_names.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\csharp\csharp_options.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\importer.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\java\generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\java\java_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\java\kotlin_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\java\names.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\objectivec\objectivec_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\objectivec\objectivec_helpers.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\parser.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\php\php_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\plugin.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\plugin.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\python\generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\python\pyi_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\python\python_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\compiler\ruby\ruby_generator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\descriptor.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\descriptor.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\descriptor_database.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\duration.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\dynamic_message.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\empty.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\endian.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\explicitly_constructed.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\extension_set.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\extension_set_inl.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\field_access_listener.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\field_mask.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\generated_enum_reflection.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\generated_enum_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\generated_message_bases.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\generated_message_reflection.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\generated_message_tctable_decl.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\generated_message_tctable_impl.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\generated_message_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\has_bits.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\implicit_weak_message.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\inlined_string_field.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\io\coded_stream.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\io\gzip_stream.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\io\io_win32.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\io\printer.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\io\strtod.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\io\tokenizer.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\io\zero_copy_stream.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\io\zero_copy_stream_impl.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\io\zero_copy_stream_impl_lite.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\map.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\map_entry.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\map_entry_lite.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\map_field.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\map_field_inl.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\map_field_lite.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\map_type_handler.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\message.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\message_lite.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\metadata.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\metadata_lite.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\parse_context.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\port.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\reflection.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\reflection_ops.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\repeated_field.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\repeated_ptr_field.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\service.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\source_context.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\struct.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\bytestream.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\callback.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\casts.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\common.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\hash.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\logging.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\macros.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\map_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\mutex.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\once.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\platform_macros.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\port.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\status.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\stl_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\stringpiece.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\strutil.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\stubs\template_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\text_format.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\timestamp.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\type.pb.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\unknown_field_set.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\util\delimited_message_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\util\field_comparator.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\util\field_mask_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\util\json_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\util\message_differencer.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\util\time_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\util\type_resolver.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\util\type_resolver_util.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\wire_format.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\wire_format_lite.h" />
+    <ClInclude Include="dependencies\protobufs\include\google\protobuf\wrappers.pb.h" />
+    <ClInclude Include="src\features\aimbot\aimbot.h" />
+    <ClInclude Include="src\features\antiaim\antiaim.h" />
+    <ClInclude Include="src\features\config\config.h" />
+    <ClInclude Include="src\features\events\events.h" />
+    <ClInclude Include="src\features\features.h" />
+    <ClInclude Include="src\features\helper\helper.h" />
+    <ClInclude Include="src\features\lagcompensation\lagcomp.h" />
+    <ClInclude Include="src\features\menu\menu.h" />
+    <ClInclude Include="src\features\misc\misc.h" />
+    <ClInclude Include="src\features\subticks\subtick.h" />
+    <ClInclude Include="src\features\visuals\visuals.h" />
+    <ClInclude Include="src\hash\hash.h" />
+    <ClInclude Include="src\hooks\directx\directx.h" />
+    <ClInclude Include="src\render\bytes.h" />
+    <ClInclude Include="src\render\render.h" />
+    <ClInclude Include="src\sdk\classes\CAggregateSceneObject.h" />
+    <ClInclude Include="src\sdk\classes\CAnimatableSceneObjectDesc.h" />
+    <ClInclude Include="src\sdk\classes\CBaseSceneData.h" />
+    <ClInclude Include="src\sdk\classes\CCLient.h" />
+    <ClInclude Include="src\sdk\classes\CCSGOInput.h" />
+    <ClInclude Include="src\sdk\classes\CDebugOverlaySystem.h" />
+    <ClInclude Include="src\sdk\classes\CGameEvents.h" />
+    <ClInclude Include="src\sdk\classes\CGameRules.h" />
+    <ClInclude Include="src\sdk\classes\CGlowProperty.h" />
+    <ClInclude Include="src\sdk\classes\CHitboxes.h" />
+    <ClInclude Include="src\sdk\classes\CNetworkClientService.h" />
+    <ClInclude Include="src\sdk\classes\CParticleSystem.h" />
+    <ClInclude Include="src\sdk\classes\CCSPlayer_MovementServices.h" />
+    <ClInclude Include="src\sdk\classes\CPlayer_WeaponServices.h" />
+    <ClInclude Include="src\sdk\classes\cs_usercmd.pb.hpp" />
+    <ClInclude Include="src\sdk\classes\CViewRender.h" />
+    <ClInclude Include="src\sdk\classes\CViewSetup.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_EconEntity.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_Inferno.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_SmokeGrenadeProjectile.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\CInputSystem.h" />
+    <ClInclude Include="src\sdk\classes\CLightBinnerGPU.h" />
+    <ClInclude Include="src\sdk\classes\CMaterial2.h" />
+    <ClInclude Include="src\sdk\classes\CRenderContextDx11.h" />
+    <ClInclude Include="src\sdk\classes\CSceneLayer.h" />
+    <ClInclude Include="src\sdk\classes\CSceneView.h" />
+    <ClInclude Include="src\sdk\classes\entity\CBasePlayerController.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_BasePlayerWeapon.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_CSWeaponBaseGun.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\CLocalize.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\CMaterialSystem.h" />
+    <ClInclude Include="src\sdk\classes\CPlayer_CameraServices.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\CResourceSystem.h" />
+    <ClInclude Include="src\sdk\classes\CSceneLightObject.h" />
+    <ClInclude Include="src\sdk\classes\CSkeletonInstance.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\Cvar.h" />
+    <ClInclude Include="src\sdk\classes\C_PostProcessingVolume.h" />
+    <ClInclude Include="src\sdk\classes\entity\CBaseAnimGraph.h" />
+    <ClInclude Include="src\sdk\classes\entity\CCSPlayerController.h" />
+    <ClInclude Include="src\sdk\classes\entity\CCSWeaponBaseVData.h" />
+    <ClInclude Include="src\sdk\classes\entity\CEntityIdentity.h" />
+    <ClInclude Include="src\sdk\classes\entity\CEntityInstance.h" />
+    <ClInclude Include="src\sdk\classes\CGameSceneNode.h" />
+    <ClInclude Include="src\sdk\classes\entity\CHandle.h" />
+    <ClInclude Include="src\sdk\classes\CUtlVector.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_BaseCombatCharacter.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_BaseEntity.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_BaseFlex.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_BaseModelEntity.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_BasePlayerPawn.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_CSPlayerPawn.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_CSPlayerPawnBase.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_CSWeaponBase.h" />
+    <ClInclude Include="src\sdk\classes\entity\C_EnvSky.h" />
+    <ClInclude Include="src\sdk\classes\GlobalVars.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\CGameEntitySystem.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\CSchemaSystem.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\GameResourceServiceClientV001.h" />
+    <ClInclude Include="src\sdk\classes\interfaces\IEngineClient.h" />
+    <ClInclude Include="src\sdk\classes\MURMUR.h" />
+    <ClInclude Include="src\sdk\classes\networkbasetypes.pb.hpp" />
+    <ClInclude Include="src\sdk\classes\network_connection.pb.hpp" />
+    <ClInclude Include="src\sdk\classes\usercmd.pb.hpp" />
+    <ClInclude Include="src\sdk\entity\entity.h" />
+    <ClInclude Include="src\hooks\hooks.h" />
+    <ClInclude Include="src\sdk\interfaces\interfaces.h" />
+    <ClInclude Include="src\sdk\classes\KeyValues3.h" />
+    <ClInclude Include="src\sdk\math\CBaseHandle.h" />
+    <ClInclude Include="src\sdk\math\Color.h" />
+    <ClInclude Include="src\sdk\math\CStrongHandle.h" />
+    <ClInclude Include="src\sdk\math\CUtlBuffer.h" />
+    <ClInclude Include="src\sdk\math\CUtlMap.h" />
+    <ClInclude Include="src\sdk\math\math.h" />
+    <ClInclude Include="src\sdk\math\UtlMemory.h" />
+    <ClInclude Include="src\sdk\math\Vector.h" />
+    <ClInclude Include="src\sdk\schema\schema.h" />
+    <ClInclude Include="src\utils\fmt.h" />
+    <ClInclude Include="src\utils\KeyHandle.h" />
+    <ClInclude Include="src\utils\utils.h" />
+    <ClInclude Include="src\utils\vmt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dependencies\protobufs\include\google\protobuf\port_def.inc" />
+    <None Include="dependencies\protobufs\include\google\protobuf\port_undef.inc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
